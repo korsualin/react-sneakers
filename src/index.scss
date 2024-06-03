@@ -7,10 +7,31 @@ body {
 
 #root{
   width: 100%;
+
 }
 
 *{
   font-family: Inter;
+}
+
+li{
+  list-style: none;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+.price{
+  strong{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.94px;
+    text-align: left;
+    margin-top: 2px;
+    margin-bottom: 0px;
+  }
 }
 
 .wrapper{
@@ -64,7 +85,6 @@ header{
       justify-content: space-around;
     }
     li{
-      list-style: none;
       margin-left: 32px;
     }
     a{
@@ -139,8 +159,6 @@ main{
     display: grid;
     grid-gap: 40px;
     grid-template: auto / repeat(4, 1fr) ;
-    margin: 0;
-    padding: 0;
   }
 }
 
@@ -151,10 +169,12 @@ main{
   border: 1px solid #F3F3F3;
   padding: 20px 28px 34px 32px;
   position: relative;
+  cursor: pointer;
+  transition: box-shadow .2s ease-out, transform .2s ease-out;
 
   &:hover{
     box-shadow: 0px 14px 30px 0px #0000000D;
-    transform: translateY(5px);
+    transform: translateY(-5px);
   }
 
   .cardImg{
@@ -165,15 +185,6 @@ main{
     position: absolute;
     top: 28px;
     left: 28px;
-  }
-
-  p{
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16.94px;
-    text-align: left;
-    margin-top: 2px;
-    margin-bottom: 0px;
   }
 
   span{
@@ -196,9 +207,142 @@ main{
   }
 }
 
-h2{
+.nameSneakers{
   font-size: 14px;
   font-weight: 400;
   line-height: 16.94px;
   text-align: left;
+}
+
+.cartContainer{
+  position: absolute;
+  max-width: 325px;
+  width: 100%;
+  box-shadow: -10px 4px 24px 0px #0000001A;
+  background-color: #FFFFFF;
+  right: 0;
+  top: 0;
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  p{
+    margin-top: 0;
+    max-width: 150px;
+  }
+
+  .cartTitle{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29.05px;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+
+  .cartItem{
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cartImg{
+    max-width: 70px;
+  }
+
+  .price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  strong{
+    text-wrap: wrap;
+    max-width: 150px;
+    margin-top: 0px;
+  }
+
+  .nameSneakers{
+    margin-bottom: 8px;
+  }
+
+  .descriptionItem{
+    width: 100%;
+    margin-left: 20px;
+  }
+
+  .cartTotal{
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul{
+    flex-grow: 1;
+  }
+
+  .deleteIcon{
+    opacity: .6;
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  .total, .charge{
+    display: flex;
+    div{
+      width: 100%;
+      border-bottom: 1px dashed #DFDFDF;
+      margin: 0px 8px;
+      flex: 1;
+      height: 14px;
+    }
+  }
+
+  .total{
+    margin-bottom: 20px;
+  }
+
+  span{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+  }
+
+  .placeOrder{
+    width: 100%;
+    padding: 18px 0px;
+    border-radius: 18px;
+    background-color: #9DD458;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: center;
+    color: white;
+    margin-top: 24px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 30px;
+    img{
+      position: absolute;
+      top: 22px;
+      right: 34px;
+    }
+  }
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
 }
