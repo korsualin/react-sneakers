@@ -1,81 +1,29 @@
 
+import Card from './components/Card';
+import Cart from './components/Cart';
+import Header from './components/Header';
+
+
+const cardItem = [
+  {title: "Мужские Кроссовки Nike Blazer Mid Suede", price: "12 999 руб.", src: "/img/sneakers/sneakers1.png", alt: "Nike Blazer Mid Suede"},
+  {title: "Мужские Кроссовки Nike Air Max 270", price: "12 999 руб.", src: "/img/sneakers/sneakers2.png", alt: "Nike Air Max 270"},
+  {title: "Мужские Кроссовки Nike Blazer Mid Suede", price: "8 499 руб.", src: "/img/sneakers/sneakers3.png", alt: "Nike Blazer Mid Suede"},
+  {title: "Кроссовки Puma X Aka Boku Future Rider", price: "8 999 руб.", src: "/img/sneakers/sneakers4.png", alt: "Puma X Aka Boku Future Rider"},
+  {title: "Мужские Кроссовки Under Armour Curry 8", price: "15 199 руб.", src: "/img/sneakers/sneakers5.png", alt: "Under Armour Curry 8"},
+  {title: "Мужские Кроссовки Nike Kyrie 7", price: "11 299 руб.", src: "/img/sneakers/sneakers6.png", alt: "Nike Kyrie 7"},
+  {title: "Мужские Кроссовки Jordan Air Jordan 11", price: "10 799 руб.", src: "/img/sneakers/sneakers7.png", alt: "Jordan Air Jordan 11"},
+  {title: "Мужские Кроссовки Nike LeBron XVIII", price: "16 499 руб.", src: "/img/sneakers/sneakers8.png", alt: "Nike LeBron XVIII"},
+  {title: "Мужские Кроссовки Nike Lebron XVIII Low", price: "13 999 руб.", src: "/img/sneakers/sneakers9.png", alt: "Nike Lebron XVIII Low"},
+  {title: "Мужские Кроссовки Nike Blazer Mid Suede", price: "8 499 руб.", src: "/img/sneakers/sneakers1.png", alt: "Nike Blazer Mid Suede"},
+  {title: "Кроссовки Puma X Aka Boku Future Rider", price: "8 999 руб.", src: "/img/sneakers/sneakers4.png", alt: "uma X Aka Boku Future Rider"},
+  {title: "Мужские Кроссовки Nike Kyrie Flytrap IV", price: "11 299 руб.", src: "/img/sneakers/sneakers10.png", alt: "Nike Kyrie Flytrap IV"},
+]
+
 function App() {
   return (
       <div className="wrapper">
-        <div className="overlay">
-          <div className="cartContainer">
-            <span className="cartTitle">Корзина</span>
-            <ul>
-              <li className="cartItem">
-                <img src="/img/sneakers/sneakers1mini.png" className="cartImg" alt="sneakers Puma X" />
-                <div className="descriptionItem">
-                  <p className="nameSneakers">Кроссовки Puma X Aka Boku Future Rider</p>
-                  <div className="price">
-                    <strong>8 999 руб.</strong>
-                    <img src="/img/deletecart.svg" className="deleteIcon" alt="delete cart" />
-                  </div>
-                </div>
-              </li>
-              <li className="cartItem">
-                <img src="/img/sneakers/sneakers1mini.png" className="cartImg" alt="sneakers Puma X" />
-                <div className="descriptionItem">
-                  <p className="nameSneakers">Кроссовки Puma X Aka Boku Future Rider</p>
-                  <div className="price">
-                    <strong>8 999 руб.</strong>
-                    <img src="/img/deletecart.svg" className="deleteIcon" alt="delete cart" />
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div className="cartTotal">
-              <div className="total">
-                <span>Итого:</span>
-                <div></div>
-                <strong>21 498 руб.</strong>
-              </div>
-              <div className="charge">
-                <span>Налог 5%:</span>
-                <div></div>
-                <strong>1074 руб.</strong>
-              </div>
-              <a className="placeOrder">
-                Оформить заказ
-                <img src="/img/next.svg" className="orderArrow" alt="next arrow" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <header>
-          <div className="headerLeft">
-            <img height="40" width="40" src="/img/logo.png" className="headerLogo" alt="logo shop" />
-            <div className="headerInfo">
-              <span>React Sneakers</span>
-              <p>Магазин лучших кроссовок</p>
-            </div>
-          </div>
-          <nav className="headerRight">
-            <ul>
-                <li className="cart">
-                  <a href="#">
-                    <img src="/img/cart.svg" className="cartIcon" alt="icon cart" />
-                    <span>1205 руб.</span>
-                  </a>
-                </li>
-                <li className="bookmarks">
-                  <a>
-                    <img src="/img/bookmarks.svg" className="bookmarksIcon" alt="icon bookmarks" />
-                    <span>Закладки</span>
-                  </a>
-                </li>
-                <li className="profile">
-                  <a>
-                    <img src="/img/profile.svg" className="profileIcon" alt="icon profile" />
-                    <span>Профиль</span>
-                  </a>
-                </li>
-              </ul>
-          </nav>
-      </header>
+        <Cart />
+        <Header />
       <main>
         {/* <img src="/img/banner.png" className="banners" alt="banner 1" /> */}
         <div className="containerTitle">
@@ -87,54 +35,11 @@ function App() {
         </div>
         <div className="sneakersWrapper">
           <ul>
-            <li className="card">
-              <img src="/img/favorite.svg" className="favoriteIcon" alt="favorite icon" />
-              <img src="/img/sneakers/sneakers1.png" className="cardImg" alt="sneakers Puma X" />
-              <h2 className="nameSneakers">Кроссовки Puma X Aka Boku Future Rider</h2>
-              <div className="addCartContainer">
-                <div className="price">
-                  <span>Цена:</span>
-                  <strong>8 999 руб.</strong>
-                </div>
-                <img src="/img/addcart.svg" className="addIcon" alt="add cart" />
-              </div>
-            </li>
-            <li className="card">
-              <img src="/img/favorite.svg" className="favoriteIcon" alt="favorite icon" />
-              <img src="/img/sneakers/sneakers1.png" className="cardImg" alt="sneakers Puma X" />
-              <h2 className="nameSneakers">Кроссовки Puma X Aka Boku Future Rider</h2>
-              <div className="addCartContainer">
-                <div className="price">
-                  <span>Цена:</span>
-                  <strong>8 999 руб.</strong>
-                </div>
-                <img src="/img/addcart.svg" className="addIcon" alt="add cart" />
-              </div>
-            </li>
-            <li className="card">
-              <img src="/img/favorite.svg" className="favoriteIcon" alt="favorite icon" />
-              <img src="/img/sneakers/sneakers1.png" className="cardImg" alt="sneakers Puma X" />
-              <h2 className="nameSneakers">Кроссовки Puma X Aka Boku Future Rider</h2>
-              <div className="addCartContainer">
-                <div className="price">
-                  <span>Цена:</span>
-                  <strong>8 999 руб.</strong>
-                </div>
-                <img src="/img/addcart.svg" className="addIcon" alt="add cart" />
-              </div>
-            </li>
-            <li className="card">
-              <img src="/img/favorite.svg" className="favoriteIcon" alt="favorite icon" />
-              <img src="/img/sneakers/sneakers1.png" className="cardImg" alt="sneakers Puma X" />
-              <h2 className="nameSneakers">Кроссовки Puma X Aka Boku Future Rider</h2>
-              <div className="addCartContainer">
-                <div className="price">
-                  <span>Цена:</span>
-                  <strong>8 999 руб.</strong>
-                </div>
-                <img src="/img/addcart.svg" className="addIcon" alt="add cart" />
-              </div>
-            </li>
+            {cardItem.map((card) => <Card title={card.title} imageUrl={card.src} price={card.price} altSneakers={card.alt} />)}
+            {/* <Card />
+            <Card />
+            <Card />
+            <Card /> */}
           </ul>
         </div>
       </main>
