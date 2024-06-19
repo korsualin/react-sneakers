@@ -17,12 +17,14 @@ const cardItem = [
   {title: "Мужские Кроссовки Nike Blazer Mid Suede", price: "8 499 руб.", src: "/img/sneakers/sneakers1.png", alt: "Nike Blazer Mid Suede"},
   {title: "Кроссовки Puma X Aka Boku Future Rider", price: "8 999 руб.", src: "/img/sneakers/sneakers4.png", alt: "uma X Aka Boku Future Rider"},
   {title: "Мужские Кроссовки Nike Kyrie Flytrap IV", price: "11 299 руб.", src: "/img/sneakers/sneakers10.png", alt: "Nike Kyrie Flytrap IV"},
-]
+];
+
+const addingProduct = [];
 
 function App() {
   return (
       <div className="wrapper">
-        <Cart />
+        <Cart addingProduct={addingProduct}/>
         <Header />
       <main>
         {/* <img src="/img/banner.png" className="banners" alt="banner 1" /> */}
@@ -35,11 +37,15 @@ function App() {
         </div>
         <div className="sneakersWrapper">
           <ul>
-            {cardItem.map((card) => <Card title={card.title} imageUrl={card.src} price={card.price} altSneakers={card.alt} />)}
-            {/* <Card />
-            <Card />
-            <Card />
-            <Card /> */}
+            {cardItem.map((card) => <Card 
+            title={card.title} 
+            imageUrl={card.src} 
+            price={card.price} 
+            altSneakers={card.alt} 
+            clickAdd={() => {
+              addingProduct.push(card);
+              console.log(addingProduct);
+            }} />)}
           </ul>
         </div>
       </main>
